@@ -5,7 +5,7 @@ const CheckBoxInput = ({ name, labelContent = name}) => {
   const [urlValue, setUrlValue] = useState("");
 
   return (
-    <div className="checkBoxInputContainer" style={{ gridTemplateColumns: `${bool ? "1fr 1fr" : "auto"} 1fr` }}>
+    <div className="checkBoxInputContainer" style={{ gridTemplateColumns: bool ? "1fr 1fr 1fr" : "1fr 4fr" }}>
       <label className="inputTextAreaLabel" htmlFor={name}>
         {labelContent}
       </label>

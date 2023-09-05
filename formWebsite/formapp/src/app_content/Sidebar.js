@@ -1,6 +1,6 @@
-function Sidebar() {
+function Sidebar({displayNone=false}) {
   return (
-    <aside className="sideNav"> 
+    <aside className={`sideNav ${displayNone ? "toggleDisplay" : "toggleAsideResponsive"}`} > 
         <h3 className="sideNavHeadline">
             Structure
         </h3>

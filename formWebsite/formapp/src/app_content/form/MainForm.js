@@ -31,6 +31,8 @@ class Form extends Component {
     };
   }
 
+
+
   changeStateAmoutOfProjects = (newValue) => {
     this.setState({ amoutOfProjects: newValue })
   }
@@ -58,15 +60,18 @@ class Form extends Component {
 
     let inputs = document.querySelectorAll("input");
 
+    try {
+      // general
+      let aboutText = document.querySelector(".generalClassSortingTextArea");
+      let aboutFoto = document.querySelector(".mainIMG img");
+      let logo = document.querySelector(".logoIMG img");
 
-    // general
-    let aboutText = document.querySelector(".generalClassSortingTextArea");
-    let aboutFoto = document.querySelector(".mainIMG img");
-    let logo = document.querySelector(".logoIMG img");
-
-    jsonContent.general["aboutText"] = aboutText.value;
-    jsonContent.general["aboutFoto"] = aboutFoto.src;
-    jsonContent.general["logo"] = logo.src;
+      jsonContent.general["aboutText"] = aboutText.value;
+      jsonContent.general["aboutFoto"] = aboutFoto.src;
+      jsonContent.general["logo"] = logo.src;
+    } catch (error) {
+      console.log(error)
+    }
     
     inputs.forEach(input =>{
       console.log(input)
