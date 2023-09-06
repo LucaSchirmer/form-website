@@ -565,9 +565,7 @@ textarea{
   
   .toggleAsideResponsive{
     background-color: #eeeeee1b;
-
-    /* box shadow fixen => nicht genug blur */
-    box-shadow: 0px 11px 50px 5px #eeeeee1b;
+    box-shadow: 0px 0px 225px 76px rgba(238,238,238,1);
 
     top: 0;
     width: 30vw;
