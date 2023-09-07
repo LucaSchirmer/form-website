@@ -565,7 +565,7 @@ textarea{
   
   .toggleAsideResponsive{
     background-color: #eeeeee1b;
-    box-shadow: 0px 0px 225px 76px rgba(238,238,238,1);
+    outline: 2px solid #eeeeee5c;
 
     top: 0;
     width: 30vw;
@@ -600,8 +600,57 @@ textarea{
 }
 
 
+@media (max-width: 800px){
+  .inputElement{
+    grid-template-rows: auto 1fr;
+    grid-template-columns: unset;
+
+  }
+
+  .requiredDisclaimer{
+    width: fit-content;
+    font: 12px;
+  }
+
+  .DragNdropLabel{
+    padding: 10px;
+    text-align: center;
+  }
+}
+
+
+@media (max-width: 600px){
+  .toggleAsideResponsive{
+    width: 50vw;
+  }
+
+  .mainHeadline{
+    font-size: 1.25rem;
+
+    text-shadow: none;
+
+    padding-left: 15vw;
+  }
+}
+
 @media (max-height: 1000px){
   .sideNav {
     height: 70vh; 
+  }
+}
+
+@media (max-height: 600px){
+  .appHeader {
+    height: 15vh;
+  } 
+
+  .navIMG {
+    height: 8vh;
+  }
+}
+
+@media (max-height: 400px){
+  .appHeader {
+    height: 17vh;
   }
 }
