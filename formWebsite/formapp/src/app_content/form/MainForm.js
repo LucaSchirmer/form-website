@@ -86,15 +86,15 @@
       try {
         // general
         let aboutText = document.querySelector(".generalClassSortingTextArea");
-        let aboutFoto = document.querySelector(".mainIMG img");
-        let logo = document.querySelector(".logoIMG img");
+        let aboutFoto = document.querySelector(".mainIMGINPUT");
+        let logo = document.querySelector(".logoIMGINPUT");
 
         jsonContent.general["aboutText"] = aboutText.value;
-        jsonContent.general["aboutFoto"] = aboutFoto.src? aboutFoto.src: "No Img avaible" ;
-        jsonContent.general["logo"] = logo.src? logo.src: "No Img avaible" ;
+        jsonContent.general["aboutFoto"] = aboutFoto.files[0].name? aboutFoto.files[0].name: "No Img avaible" ;
+        jsonContent.general["logo"] = logo.files[0].name? logo.files[0].name: "No Img avaible" ;
 
-        if(aboutFoto.src) images.push([`aboutFoto.jpg`, aboutFoto.target.files[0]]);
-        if(logo.src) images.push([`logo.jpg`, logo.target.files[0]]);
+        if(aboutFoto.src) images.push([`aboutFoto.jpg`, aboutFoto.files[0]]);
+        if(logo.src) images.push([`logo.jpg`, logo.files[0]]);
         
       } catch (error) {
         console.log(error)
