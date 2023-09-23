@@ -181,10 +181,11 @@
       const uniqueFilename = `data_${timestamp}.json`;
 
       console.log(storage)
+      const folderPath = `${document.querySelectorAll(".generalClassSorting")[0].value}/`;
+      console.log(folderPath);
 
-      const storageRef = ref(storage, uniqueFilename);
+      const storageRef = ref(storage, folderPath + uniqueFilename);
       const fileBlob = new Blob([JSON.stringify(jsonContent)], { type: 'application/json' });
-
       
        uploadBytes(storageRef, fileBlob)
         .then((snapshot) => {
@@ -207,7 +208,7 @@
 
           console.log(imageUrl)
 
-          const storageRef = ref(storage, fileName);
+          const storageRef = ref(storage, folderPath + fileName);
 
           uploadBytes(storageRef, file)
             .then((snapshot) => {
