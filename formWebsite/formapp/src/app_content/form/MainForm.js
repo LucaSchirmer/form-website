@@ -93,8 +93,8 @@
         jsonContent.general["aboutFoto"] = aboutFoto.files[0].name? aboutFoto.files[0].name: "No Img avaible" ;
         jsonContent.general["logo"] = logo.files[0].name? logo.files[0].name: "No Img avaible" ;
 
-        if(aboutFoto.src) images.push([`aboutFoto.jpg`, aboutFoto.files[0]]);
-        if(logo.src) images.push([`logo.jpg`, logo.files[0]]);
+        if(aboutFoto.files[0]) images.push([aboutFoto.files[0].name, aboutFoto.files[0]]);
+        if(logo.files[0]) images.push([logo.files[0].name, logo.files[0]]);
         
       } catch (error) {
         console.log(error)
@@ -128,14 +128,15 @@
       if(this.state.amoutOfProjects > 0){
         for(let index = 0; index <  this.state.amoutOfProjects; index++){
           let project = document.querySelectorAll(`.projectsClassNameSorting${index}`)
+          let projectInput = document.querySelector(`.projectsClassNameSorting${index}INPUT`)
           jsonContent.projects[index] = {
             "title": project[0].value,
             "text": project[1].value,
-            "foto": project[4] ? (project[4].src ? project[4].src : "No img avaible") : "No img avaible"           
+            "foto": projectInput.files[0] ? projectInput.files[0] : "No img avaible"           
           }
 
-        if(project[4] && project[4].src){
-          images.push([`projects_${index}_img`, project[4].src]);
+        if(projectInput.files[0]){
+          images.push([projectInput.files[0].name, projectInput.files[0]]);
         }
 
         }
@@ -145,13 +146,14 @@
       if(this.state.amoutOfServices > 0){
         for(let index = 0; index <  this.state.amoutOfServices; index++){
           let service = document.querySelectorAll(`.servicesClassNameSorting${index}`)
+          let serviceInput = document.querySelector(`.servicesClassNameSorting${index}INPUT`)
           jsonContent.services[index] = {
             "title": service[0].value,
             "text": service[1].value,
-            "foto": service[4]? (service[4].src?   service[4].src : "No Img avaible") : "No Img avaible"
+            "foto": serviceInput.files[0] ? serviceInput.files[0] : "No Img avaible"
           }
 
-          if(service[4] && service[4].src) images.push([`services_${index}_img`, service[4].src]);
+          if(serviceInput.files[0]) images.push([serviceInput.files[0].name, serviceInput.files[0]]);
 
         }
       }
@@ -160,12 +162,13 @@
       if(this.state.amoutOfCustomers > 0){
         for(let index = 0; index <  this.state.amoutOfCustomers; index++){
           let customer = document.querySelectorAll(`.customersClassNameSorting${index}`)
+          let customerInput = document.querySelector(`.customersClassNameSorting${index}INPUT`)
           jsonContent.customers[index] = {
             "title": customer[0].value,
-            "foto": customer[3]?  (customer[3].src?  customer[3].src : "No Img avaible") :  "No Img avaible"
+            "foto": customerInput.files[0] ? customerInput.files[0] :  "No Img avaible"
           }
 
-         if(customer[3] && customer[3].src) images.push([`customers_${index}_img}`, customer[3].src]);
+         if(customerInput.files[0]) images.push([customerInput.files[0].name, customerInput.files[0]]);
 
         }
       }

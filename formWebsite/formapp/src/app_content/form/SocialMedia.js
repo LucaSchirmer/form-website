@@ -42,6 +42,11 @@ const SocialMedia = () => {
         name="twitter"
         labelContent="Twitter: "    
       />
+
+      <CheckBoxInput
+        name="fiverr"
+        labelContent="Fiverr: "    
+      />
     </div>
   );
 }
