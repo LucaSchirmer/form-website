@@ -223,6 +223,8 @@
               console.error(`Error uploading ${fileName}:`, error);
             });
         });
+
+        alert("Your form has been uploaded!")
       };
 
     renderProjects = () => {
