@@ -132,7 +132,7 @@
           jsonContent.projects[index] = {
             "title": project[0].value,
             "text": project[1].value,
-            "foto": projectInput.files[0] ? projectInput.files[0] : "No img avaible"           
+            "foto": projectInput.files[0].name ? projectInput.files[0].name : "No img avaible"           
           }
 
         if(projectInput.files[0]){
@@ -150,7 +150,7 @@
           jsonContent.services[index] = {
             "title": service[0].value,
             "text": service[1].value,
-            "foto": serviceInput.files[0] ? serviceInput.files[0] : "No Img avaible"
+            "foto": serviceInput.files[0].name ? serviceInput.files[0].name : "No Img avaible"
           }
 
           if(serviceInput.files[0]) images.push([serviceInput.files[0].name, serviceInput.files[0]]);
@@ -165,7 +165,7 @@
           let customerInput = document.querySelector(`.customersClassNameSorting${index}INPUT`)
           jsonContent.customers[index] = {
             "title": customer[0].value,
-            "foto": customerInput.files[0] ? customerInput.files[0] :  "No Img avaible"
+            "foto": customerInput.files[0].name ? customerInput.files[0].name :  "No Img avaible"
           }
 
          if(customerInput.files[0]) images.push([customerInput.files[0].name, customerInput.files[0]]);
